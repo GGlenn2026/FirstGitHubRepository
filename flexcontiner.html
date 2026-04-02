@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexContainer</title>
+<style>
+/* Default (light) theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark theme variables when the checkbox is checked */
+:has(#theme-toggle:checked) {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* Apply variables to elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+  /* Additional flex properties can be added here */
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}</style>
+</head>
+<body>
+<label class="toggle-switch">
+  <input type="checkbox" id="theme-toggle">
+  <!-- Visuals for the toggle go here -->
+Dark Mode
+</label>
+<!-- <div class="content"> -->
+  <!-- Your website content -->
+<!-- </div> -->
+
+<!-- <button id="theme-toggle">Toggle Dark Mode</button> -->
+<!-- <div class="content"> -->
+  <!-- Your website content -->
+<!-- </div> -->
+
+    <h1>Gordon</h1>
+    <p>Front End Simplified</p>
+    <div class="flex-container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+
+</body>
+</html>

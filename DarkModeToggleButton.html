@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  <link rel="stylesheet" href="style.css">-->
+<style>
+/* Default (light mode) variables */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #111111;
+}
+
+/* Dark mode variables (applied when the dark-mode class is present) */
+body.dark-mode {
+    --bg-color: #111111;
+    --text-color: #f0f0f0;
+}
+
+/* General styles using the variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Styles for the toggle switch (hiding default checkbox and styling the label) */
+#darkModeToggle {
+    display: none; /* Hide the actual checkbox */
+}
+
+.toggle-label {
+    /* Style the label to look like a switch or button */
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-label::after {
+    /* The moving part of the switch */
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
+}
+
+/* Move the toggle 'handle' when the checkbox is checked and the body has dark-mode class */
+/* Note: The :checked + selector works here because the label immediately follows the checkbox in HTML */
+#darkModeToggle:checked + .toggle-label {
+    background-color: #66bb6a; /* Color when dark mode is on */
+}
+
+#darkModeToggle:checked + .toggle-label::after {
+    left: 32px; /* Move the handle to the right */
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Dark Mode Toggle</h1>
+        <!-- Checkbox input is a common and accessible choice for a toggle switch -->
+        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+        <label for="darkModeToggle" class="toggle-label"></label>
+    </header>
+    <main>
+        <p>Content goes here.</p>
+    </main>
+    <script>
+// Function to toggle the dark mode class on the body element
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    
+    // Optional: Save user preference in localStorage to remember their choice on page reload
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Optional: Check local storage on page load to apply the user's saved theme
+document.addEventListener('DOMContentLoaded', (event) => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('darkModeToggle').checked = true;
+    }
+});
+
+
+</script>
+</body>
+</html>

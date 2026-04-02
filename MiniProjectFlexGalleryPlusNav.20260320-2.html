@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project: Flex Gallery + Nav</title>
+    <style>
+/* Default (light) theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark theme variables when the checkbox is checked */
+:has(#theme-toggle:checked) {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+/* Apply variables to elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+    /*Section 1 — Navigation Bar: */
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #4337de;
+  color: white;
+
+  }
+}
+
+
+.navbar__logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar__links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar__links a:hover {
+  text-decoration: underline;
+}
+    
+ /*Section 2 — Responsive Card Gallery: */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+  /*background-color: #f7f7f7;*/
+}
+
+.card {
+  /*background-color: white;*/
+  /*background-color: (var(--bg-color)+white);*/
+  background-color: wheat;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+ width: 250px;
+   /* width: 30%;*/
+  text-align: center;
+  padding: 20px;
+  /*Add the transition time for 
+    hover effect on each card using
+    transform: scale(1.05):*/
+  transition: transform 0.3s; /* Smooth transition for the scaling effect */
+}
+  /*
+.card:hover {
+    transform: scale(1.05); /* Scale the card up slightly on hover */
+/*Placing the transformation here causes 
+    the image to be bigger than the card*/
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+    
+/*A button under each project description:*/
+.project-button {
+    padding: 10px 15px; /* Add some padding for a better look */
+    background-color: #007BFF; /* A nice blue color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.project-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/*hover effect on each card using
+    transform: scale(1.05):*/
+.card:hover {
+    transform: scale(1.05); /* Scale the card up slightly on hover */
+
+    
+ </style>
+ <script></script>
+</head>
+<body>
+<header>
+ <label class="toggle-switch">
+  <input type="checkbox" id="theme-toggle">
+  <!-- Visuals for the toggle go here -->
+Dark Mode
+</label>
+ <h1>Welcome to Mini Project: Flex Gallery + Nav</h1>
+ 
+</header>
+<main>
+<!-- Section 1 — Navigation Bar: --> 
+ <nav class="navbar">
+    
+  <h1 class="navbar__logo">FES</h1>
+  <div class="navbar__links">
+    <a href="#">Home</a>
+    <a href="#">Courses</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+    
+<!--Section 2 — Responsive Card Gallery: -->
+ <section class="gallery">
+  <div class="card">
+  <!--<img src="https://via.placeholder.com/250x150" alt="Card 1">-->
+<img src="https://colorlib.com/wp/wp-content/uploads/sites/2/minimal-html5-website-templates.jpg.webp" alt="Card 1">
+    <h2>Project One</h2>
+    <p>Clean and minimal layout.</p>
+<!--A button under each project description:-->
+<button class="project-button">View Project</button>
+  </div>
+
+  <div class="card">
+    <!--<img src="https://via.placeholder.com/250x150" alt="Card 2">-->
+<img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/8103728/985514_372023.png" alt="Card 2">
+    <h2>Project Two</h2>
+    <p>Flexible and responsive design.</p>
+ <!--A button under each project description:-->
+<button class="project-button">View Project</button>
+  </div>
+
+<div class="card">
+    <!--<img src="https://via.placeholder.com/250x150" alt="Card 3">-->
+<img src="https://www.seabreeze.com.au/img/photos/sailing/17334929.jpg" alt="Card 3">
+    <h2>Project Three</h2>
+    <p>Built using Flexbox principles.</p>
+<!--A button under each project description:-->
+<button class="project-button">View Project</button>
+  </div>
+ 
+ <!--Add a Toggle Button for Dark Mode:>l-->
+ <!--<button id="toggle-dark-mode">Toggle Dark Mode</button>-->
+     
+</section> 
+    
+</main>
+<footer>
+  <p>© 2026 Mini Project: Flex Gallery + Nav</p>
+</footer>
+</body>
+</html>
